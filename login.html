@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+    <main>
+        <div class="side-image">
+            <img src="./images/side_image.png" alt="side image">
+        </div>
+        <div class="main-form">
+            <div class='title'>Login</div>
+            <div class='inputs'>
+                <div>
+                    <label>Email </label>
+                    <div>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class='password'>
+                    <label>Password </label>
+                    <div class='password-input' id='password-inputs'>
+                        <input type="password">
+                        <div class='see-btn' onclick="seePassword()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='sign-btn'>
+                Login
+            </div>
+            <div class="more">
+                or connect with
+            </div>
+            <div class="media">
+                <div>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.3331 18.3333H4.99979L4.99979 4.99995L18.3331 4.99995V18.3333Z" fill="#FF5722" />
+                        <path d="M35 18.3333H21.6667V4.99995L35 4.99995V18.3333Z" fill="#4CAF50" />
+                        <path d="M35 35H21.6667V21.6667H35V35Z" fill="#FFC107" />
+                        <path d="M18.3331 35H4.99979L4.99979 21.6667H18.3331V35Z" fill="#03A9F4" />
+                    </svg>
+                </div>
+                <div>
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M35.6764 17.8382C35.6764 7.99152 27.6849 0 17.8382 0C7.99152 0 0 7.99152 0 17.8382C0 26.4719 6.13635 33.6607 14.2706 35.3197V23.1897H10.7029V17.8382H14.2706V13.3787C14.2706 9.93589 17.0712 7.13529 20.5139 7.13529H24.9735V12.4868H21.4059C20.4248 12.4868 19.622 13.2895 19.622 14.2706V17.8382H24.9735V23.1897H19.622V35.5872C28.6303 34.6953 35.6764 27.0963 35.6764 17.8382Z"
+                            fill="#0075FF" />
+                    </svg>
+                </div>
+                <div>
+                    <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="32.6248" height="31.6927" fill="url(#pattern0)" />
+                        <defs>
+                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0"
+                                    transform="translate(0 -0.0147059) scale(0.0208333 0.0214461)" />
+                            </pattern>
+                            <image id="image0" width="48" height="48"
+                                xlink:href="data:image/png;base64,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" />
+                        </defs>
+                    </svg>
+                </div>
+                <div>
+                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M17.3327 34.6655C26.9053 34.6655 34.6655 26.9053 34.6655 17.3327C34.6655 7.76013 26.9053 0 17.3327 0C7.76013 0 0 7.76013 0 17.3327C0 26.9053 7.76013 34.6655 17.3327 34.6655Z"
+                            fill="#007AB9" />
+                        <path
+                            d="M27.6904 18.7271V25.873H23.5474V19.206C23.5474 17.532 22.9493 16.3888 21.4492 16.3888C20.3045 16.3888 19.6244 17.1584 19.3241 17.9037C19.215 18.17 19.1869 18.5399 19.1869 18.9134V25.8727H15.0436C15.0436 25.8727 15.0992 14.581 15.0436 13.4122H19.1872V15.1779C19.1789 15.1918 19.1671 15.2054 19.1597 15.2187H19.1872V15.1779C19.7378 14.3307 20.7197 13.1196 22.9211 13.1196C25.6469 13.1196 27.6904 14.9005 27.6904 18.7271ZM10.7093 7.40573C9.29206 7.40573 8.36484 8.33605 8.36484 9.55834C8.36484 10.7547 9.26518 11.7119 10.6549 11.7119H10.6818C12.1269 11.7119 13.0254 10.7547 13.0254 9.55834C12.9979 8.33605 12.1269 7.40573 10.7093 7.40573ZM8.61109 25.873H12.7529V13.4122H8.61109V25.873Z"
+                            fill="#F1F2F2" />
+                    </svg>
+                </div>
+            </div>
+            <div class="newUser">
+                Don’t have an account? <a href="/index.html">Signup</a>
+            </div>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>
